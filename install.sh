@@ -1,7 +1,9 @@
+# should be run by all developers
+
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install -y python3 python3-dev python3-pip 
-sudo apt-get install -y git vim virtualenv 
+sudo apt-get install -y python3 python3-dev python3-pip
+sudo apt-get install -y git vim virtualenv curl
 
 sudo apt-get install -y postgresql postgresql-contrib
 # need these 2 to intall psycopg2 using pip
@@ -24,3 +26,9 @@ mkdir -p repos
 
 sudo pip install virtualenvwrapper
 
+# node installation (optional for python developers)
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt install -y build-essential
+
+npm install -g expo-cli
