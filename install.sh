@@ -20,6 +20,8 @@ grep -qxF "alias pip=pip3" ~/.bash_profile ||echo 'alias pip=pip3' >> ~/.bash_pr
 grep -qxF "export WORKON_HOME=\$HOME/.virtualenvs" ~/.bash_profile ||echo 'export WORKON_HOME=$HOME/.virtualenvs' >> ~/.bash_profile
 grep -qxF "source /usr/local/bin/virtualenvwrapper.sh" ~/.bash_profile ||echo 'source /usr/local/bin/virtualenvwrapper.sh' >> ~/.bash_profile
 
+sudo rm /usr/bin/python
+sudo ln -s /usr/bin/python3.6 /usr/bin/python
 
 cd ~
 mkdir -p repos
