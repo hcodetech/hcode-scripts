@@ -1,11 +1,3 @@
-to access phpmy-admin
-ssh -N -L 8888:127.0.0.1:80 pt-wp
-http://127.0.0.1:8888/phpmyadmin/
-user: root
-
-
-password is same as application passowrd, accessible at 
-
 ## Install wordpress
 ### Step 1.Create wp instance
 1. Create ec2 instace to install wp using bitnami ami. we used [this ami](https://aws.amazon.com/marketplace/pp/prodview-bzstv3wbn5wkq) - this is apache2
@@ -42,3 +34,17 @@ rewrite ^/blog(/.*) $1 last;
 ```
 
 3. Finally `sudo /opt/bitnami/ctlscript.sh restart`
+
+### Get access to db
+to access phpmy-admin, create tunnel
+```
+ssh -N -L 8888:127.0.0.1:80 hcode-blog
+```
+where hcode-blog is the name of ssh connection
+
+then open:
+http://127.0.0.1:8888/phpmyadmin/
+user: root
+password is same as application passowrd, accessible at `sudo cat /home/bitnami/bitnami_credentials`
+
+
