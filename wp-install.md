@@ -11,7 +11,7 @@
 1. Go to cloudfront distribution
 2. Add origin -> blog.hcode.tech, Https only
 3. Add behavior -> blog/, point to above origin and redirect http to https and choose Cache policy as CachingDisabled
-4. Add behavior -> blog/*, point to above origin and redirect http to https (Make sure blog/ has higher precedence then blog/*)
+4. Add behavior -> blog/*, point to above origin and redirect http to https (Make sure `blog/` has higher precedence then `blog/*`)
 
 ### Step 3 Update wp-config and rewrite rules
 1. `sudo vim /opt/bitnami/wordpress/wp-config.php` and modify below lines
